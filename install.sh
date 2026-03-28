@@ -21,7 +21,11 @@ paru -S --color=auto --needed --noconfirm $(grep "^[^#]" $SETUP_PATH/packages)
 cp --recursive $SETUP_PATH/home/. ~
 
 sudo systemctl enable --now NetworkManager.service
+sudo systemctl enable --now sshd.service
 sudo systemctl enable --now cockpit.socket
+sudo systemctl enable --now docker.service
+
+sudo usermod -aG docker $USER
 
 sudo chsh -s $(which fish) $USER
 
