@@ -2,12 +2,12 @@ SETUP_PATH=$PWD
 
 # Install paru
 sudo pacman --sync --needed --noconfirm base-devel
-[[ -d /tmp/paru-bin ]] && sudo rm --recursive /tmp/paru-bin
-git clone https://aur.archlinux.org/paru.git /tmp/paru-bin
-cd /tmp/paru-bin
+[[ -d /tmp/paru ]] && sudo rm --recursive /tmp/paru
+git clone https://aur.archlinux.org/paru.git /tmp/paru
+cd /tmp/paru
 makepkg --syncdeps --install --needed --noconfirm
 cd $SETUP_PATH
-[[ -d /tmp/paru-bin ]] && sudo rm --recursive /tmp/paru-bin
+[[ -d /tmp/paru ]] && sudo rm --recursive /tmp/paru
 
 # Install packages
 paru -S --color=auto --needed --noconfirm $(grep "^[^#]" $SETUP_PATH/packages)
