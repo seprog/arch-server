@@ -10,8 +10,9 @@ makepkg --syncdeps --install --needed --noconfirm
 cd $SETUP_PATH
 [[ -d /tmp/paru ]] && sudo rm --recursive /tmp/paru
 paru -S --color=auto --needed --noconfirm $(grep "^[^#]" ./packages)
-sudo systemctl enable --now NetworkManager.service
 cp --recursive $SETUP_PATH/home/. ~
+sudo systemctl enable --now NetworkManager.service
+sudo systemctl enable --now cockpit.socket
 sudo chsh -s $(which fish) $USER
 sudo reboot
 ```
