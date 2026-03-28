@@ -7,7 +7,7 @@ extra/cockpit-docker
 extra/cockpit-files
 extra/cockpit-packagekit
 extra/cockpit-storaged
-extra/avahi
+extra/pcp
 extra/networkmanager
 extra/packagekit
 extra/udisks2
