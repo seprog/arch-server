@@ -3,12 +3,12 @@
 ```bash
 SETUP_PATH=$PWD
 sudo pacman --sync --needed --noconfirm base-devel
-[[ -d /tmp/paru-bin ]] && sudo rm --recursive /tmp/paru-bin
-git clone https://aur.archlinux.org/paru.git /tmp/paru-bin
-cd /tmp/paru-bin
+[[ -d /tmp/paru ]] && sudo rm --recursive /tmp/paru
+git clone https://aur.archlinux.org/paru.git /tmp/paru
+cd /tmp/paru
 makepkg --syncdeps --install --needed --noconfirm
 cd $SETUP_PATH
-[[ -d /tmp/paru-bin ]] && sudo rm --recursive /tmp/paru-bin
+[[ -d /tmp/paru ]] && sudo rm --recursive /tmp/paru
 paru -S --color=auto --needed --noconfirm $(grep "^[^#]" ./packages)
 sudo systemctl enable --now NetworkManager.service
 cp --recursive $SETUP_PATH/home/. ~
