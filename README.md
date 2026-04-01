@@ -38,6 +38,8 @@ extra/udisks2
 extra/fish
 ### man (manual pages)
 core/man-db
+### ripgrep
+extra/ripgrep
 ### eza (list files, replaces `ls`)
 extra/eza
 ### bat ((text) file content viewer, replaces `cat`)
